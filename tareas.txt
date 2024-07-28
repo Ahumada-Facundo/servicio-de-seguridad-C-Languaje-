@@ -1,0 +1,132 @@
+1111
+0
+evaluar el area de cobertura
+1
+0
+20
+1111
+1
+montar la camara
+2
+0
+30
+1111
+2
+configurar la coneccion
+2
+0
+25
+1111
+3
+pruebas y ajustes
+4
+0
+15
+2222
+4
+evaluacion del lugar
+1
+0
+10
+2222
+5
+instalacion de sensores
+2
+1
+30
+2222
+6
+conexion y programación
+3
+1
+0
+2222
+7
+pruebas y ajustes
+4
+0
+35
+3333
+8
+planifcacion del sistema de iluminacion
+1
+0
+40
+3333
+9
+montaje de luces
+2
+1
+40
+3333
+10
+conexion electrica
+3
+1
+0
+3333
+11
+prueba y ajuste de iluminacion
+4
+0
+40
+4444
+12
+inspeccion del area
+1
+1
+0
+4444
+13
+instalacion del sensor
+2
+1
+45
+4444
+14
+conexion del sistema
+2
+1
+20
+4444
+15
+prueba de sensibilidad
+4
+0
+30
+5555
+16
+planificacion del cableado
+1
+0
+30
+5555
+17
+instalacion de conductos
+2
+1
+15
+5555
+18
+tendido de cables
+3
+1
+20
+5555
+19
+verificacion y pruebas
+4
+1
+0
+9999
+4567
+tarea1
+1
+1
+30
+9999
+4568
+tarea2
+1
+1
+10

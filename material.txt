@@ -1,0 +1,56 @@
+1000
+cable reforzado a prueba de agua
+210
+9000
+1111
+camara
+30
+7500
+1112
+clavos
+7000
+90
+1113
+tornillos
+4000
+150
+1114
+herramientas varias
+500
+3000
+1115
+alarma
+700
+12000
+2220
+cable 15mm
+250
+4675
+3333
+sensores de movimiento
+70
+15000
+4444
+equipo de planificación
+1000
+4500
+5555
+maquina de testeo de sensibilidad
+789
+3450
+6666
+nivel laser
+20
+890
+7777
+software actualizado
+45
+250000
+8888
+alambre de pua
+500
+4555
+9999
+cable de red
+670
+1234
