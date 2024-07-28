@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+// se trata de una empresa de seguridad, realizamos este proyecto para un trabajo
+//practico integrador de la materia algoritmos y estructuras 2, en los que se 
+//ven temas como listas,pilas,colas,etc todas estructuras de datos dinamicas,
+
+
 struct fecha{
 	int dia;
 	int mes;
@@ -49,7 +54,7 @@ struct Trabajos_Pendientes {
     int idOpcion;
     int idCliente;
     int idTecnico;
-    int pendiente; // 1 si el trabajo está pendiente, 0 si está terminado
+    int pendiente; // 1 si el trabajo estï¿½ pendiente, 0 si estï¿½ terminado
     char Ubicacion[50];
     struct fecha fech;
     float MonTotal; 
@@ -229,7 +234,7 @@ int main() {
                             if (opcion->cod_opcion== codigo) {
                                 printf("Ingrese el nuevo nombre de la opcion: ");
                                 fgets(opcion->nombre, sizeof(opcion->nombre), stdin);
-                                opcion->nombre[strcspn(opcion->nombre, "\n")] = 0; // Eliminar salto de línea
+                                opcion->nombre[strcspn(opcion->nombre, "\n")] = 0; // Eliminar salto de lï¿½nea
                                 printf("Ingrese el nuevo costo de la mano de obra de la opcion: ");
                                 scanf("%f", &opcion->costo_MO);
                             } else {
@@ -276,7 +281,7 @@ int main() {
                             if (tarea) {
                                 printf("Ingrese el nuevo nombre de la tarea: ");
                                 fgets(tarea->nom_tarea, sizeof(tarea->nom_tarea), stdin);
-                                tarea->nom_tarea[strcspn(tarea->nom_tarea, "\n")] = 0; // Eliminar salto de línea
+                                tarea->nom_tarea[strcspn(tarea->nom_tarea, "\n")] = 0; // Eliminar salto de lï¿½nea
                                 printf("Ingrese el nuevo orden de la tarea: ");
                                 scanf("%d", &tarea->orden);
                                 printf("Ingrese el nuevo tiempo estimado (hora minuto): ");
@@ -528,7 +533,7 @@ void cargar_opciones_desde_archivo(struct opciones **raiz, const char *nombreArc
         
         if (fscanf(archivo, "%d\n", &nueva_opcion->cod_opcion) != 1) break;
         fgets(nueva_opcion->nombre, sizeof(nueva_opcion->nombre), archivo);
-        nueva_opcion->nombre[strcspn(nueva_opcion->nombre, "\n")] = 0; // Eliminar salto de línea
+        nueva_opcion->nombre[strcspn(nueva_opcion->nombre, "\n")] = 0; // Eliminar salto de lï¿½nea
         fscanf(archivo, "%f\n", &nueva_opcion->costo_MO);
         nueva_opcion->sgte = NULL;
         insertar_opcion(&nueva_opcion, raiz);
@@ -542,7 +547,7 @@ void agregar_opcion(struct opciones **raiz) {
     if (nueva_opcion != NULL) {
         printf("Ingrese el nombre de la opcion: ");
         fgets(nueva_opcion->nombre, sizeof(nueva_opcion->nombre), stdin);
-        nueva_opcion->nombre[strcspn(nueva_opcion->nombre, "\n")] = 0; // Eliminar salto de línea
+        nueva_opcion->nombre[strcspn(nueva_opcion->nombre, "\n")] = 0; // Eliminar salto de lï¿½nea
         printf("Ingrese el codigo de la opcion: ");
         scanf("%d", &nueva_opcion->cod_opcion);
         printf("Ingrese el costo de la mano de obra de la opcion: ");
@@ -617,12 +622,12 @@ struct tareas *buscar_tareas_anterior(int opcion, int orden, int hora, int minut
     int tiempo_nuevo = hora * 60 + minutos;
 
     while (ini != NULL) {
-        // Si la opción actual es mayor, hemos pasado el punto de inserción
+        // Si la opciï¿½n actual es mayor, hemos pasado el punto de inserciï¿½n
         if (ini->cod_opcion > opcion) {
             break;
         }
 
-        // Si encontramos la opción correcta
+        // Si encontramos la opciï¿½n correcta
         if (ini->cod_opcion == opcion) {
             // Si encontramos el mismo orden
             if (ini->orden == orden) {
@@ -634,7 +639,7 @@ struct tareas *buscar_tareas_anterior(int opcion, int orden, int hora, int minut
                     break;
                 }
             } else if (ini->orden > orden) {
-                // Si encontramos una orden mayor, hemos pasado el punto de inserción
+                // Si encontramos una orden mayor, hemos pasado el punto de inserciï¿½n
                 break;
             }
         }
@@ -710,7 +715,7 @@ void agregar_tarea(struct tareas **raiz) {
         getchar(); // Limpiar buffer de entrada
         printf("Ingrese el nombre de la tarea: ");
         fgets(nueva_tarea->nom_tarea, sizeof(nueva_tarea->nom_tarea), stdin);
-        nueva_tarea->nom_tarea[strcspn(nueva_tarea->nom_tarea, "\n")] = 0; // Eliminar salto de línea
+        nueva_tarea->nom_tarea[strcspn(nueva_tarea->nom_tarea, "\n")] = 0; // Eliminar salto de lï¿½nea
         printf("Ingrese el orden de la tarea: ");
         scanf("%d", &nueva_tarea->orden);
         printf("Ingrese el tiempo estimado\n");
@@ -739,7 +744,7 @@ struct tareas *buscar_tarea(int cod_opcion, int cod_tarea, struct tareas *raiz) 
 
 //Modulo Material 
 
-// Función para crear y agregar un nuevo nodo de material
+// Funciï¿½n para crear y agregar un nuevo nodo de material
 void nuevoNodoM(struct Material** raizM) {
     struct Material* nodoM = (struct Material*) malloc(sizeof(struct Material));
     if (nodoM != NULL) {
@@ -748,7 +753,7 @@ void nuevoNodoM(struct Material** raizM) {
         getchar(); // Limpiar buffer de entrada
         printf("Nombre del material: ");
         fgets(nodoM->denominacion, sizeof(nodoM->denominacion), stdin);
-        nodoM->denominacion[strcspn(nodoM->denominacion, "\n")] = 0; // Eliminar salto de línea
+        nodoM->denominacion[strcspn(nodoM->denominacion, "\n")] = 0; // Eliminar salto de lï¿½nea
         printf("Stock disponible: ");
         scanf("%d", &nodoM->StockMat);
         printf("Precio unitario: ");
@@ -761,7 +766,7 @@ void nuevoNodoM(struct Material** raizM) {
     }
 }
 
-// Función para insertar un material en el árbol
+// Funciï¿½n para insertar un material en el ï¿½rbol
 struct Material* insertarMaterial(struct Material* raizM, struct Material* nodoM) {
     if (raizM != NULL) {
         if (raizM->CodMat == nodoM->CodMat) {
@@ -777,7 +782,7 @@ struct Material* insertarMaterial(struct Material* raizM, struct Material* nodoM
     return raizM;
 }
 
-// Función para buscar el costo de un material por su ID
+// Funciï¿½n para buscar el costo de un material por su ID
 float busquedaMaterial(struct Material* raiz, int mat) {
     if (raiz != NULL) {
         if (raiz->CodMat == mat) {
@@ -788,12 +793,12 @@ float busquedaMaterial(struct Material* raiz, int mat) {
             return busquedaMaterial(raiz->derecha, mat);
         }
     } else {
-        printf("No se encontró material con ID %d.\n", mat);
+        printf("No se encontrï¿½ material con ID %d.\n", mat);
         return -1;
     }
 }
 
-// Función para recorrer y mostrar todos los materiales en el árbol
+// Funciï¿½n para recorrer y mostrar todos los materiales en el ï¿½rbol
 void recorrer(struct Material* raiz) {
     if (raiz != NULL) {
         recorrer(raiz->izquierda);
@@ -805,7 +810,7 @@ void recorrer(struct Material* raiz) {
     }
 }
 
-// Función para guardar los materiales en un archivo
+// Funciï¿½n para guardar los materiales en un archivo
 void guardarMaterialesEnArchivo(struct Material* raiz, const char* nombreArchivo) {
     FILE* archivo = fopen(nombreArchivo, "w");
     if (archivo == NULL) {
@@ -816,7 +821,7 @@ void guardarMaterialesEnArchivo(struct Material* raiz, const char* nombreArchivo
     fclose(archivo);
 }
 
-// Función auxiliar para guardar los materiales en un archivo
+// Funciï¿½n auxiliar para guardar los materiales en un archivo
 void guardarMaterialEnArchivo_auxiliar(FILE* archivo, struct Material* raiz) {
     if (raiz != NULL) {
         guardarMaterialEnArchivo_auxiliar(archivo, raiz->izquierda);
@@ -825,7 +830,7 @@ void guardarMaterialEnArchivo_auxiliar(FILE* archivo, struct Material* raiz) {
     }
 }
 
-// Función para cargar los materiales desde un archivo
+// Funciï¿½n para cargar los materiales desde un archivo
 void cargarMaterialesDesdeArchivo(struct Material** raiz, const char* nombreArchivo) {
     FILE* archivo = fopen(nombreArchivo, "r");
     if (archivo == NULL) {
@@ -980,7 +985,7 @@ void Carga_Trabajo(struct Trabajos_Pendientes **Entrada, struct Trabajos_Pendien
 	scanf("%d", &nuevoTrabajo->fech.dia);
     printf("Ingrese el mes: ");
 	scanf("%d", &nuevoTrabajo->fech.mes);
-    printf("Ingrese el año: ");
+    printf("Ingrese el aï¿½o: ");
 	scanf("%d", &nuevoTrabajo->fech.anio);
 	
     nuevoTrabajo->MonTotal = buscartotal(nuevoTrabajo->idOpcion, ini_matxopc, ini_mat, ini_opciones);
@@ -1060,7 +1065,7 @@ void guardar_cola_finalizado(struct Trabajos_Pendientes *E, const char *archivo)
 }
 
 void Alta_Trabajos(struct Trabajos_Pendientes **cola1, struct Trabajos_Pendientes **cola2) {
-    // Verificar cola 1 vacía
+    // Verificar cola 1 vacï¿½a
     if (*cola1 != NULL) {
         // Desencolar 
         struct Trabajos_Pendientes *trabajo = *cola1;
@@ -1108,7 +1113,7 @@ bool fechaValida(int dia, int mes, int anio) {
 
     int diasPorMes[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if (anio % 4 == 0 && (anio % 100 != 0 || anio % 400 == 0)) {
-        diasPorMes[1] = 29; // Año bisiesto
+        diasPorMes[1] = 29; // Aï¿½o bisiesto
     }
     if (dia > diasPorMes[mes - 1]) {
 	printf("ingrese un dia valido para el mes.");
@@ -1119,7 +1124,7 @@ bool fechaValida(int dia, int mes, int anio) {
 }
 
 int convertirFechaADias(int dia, int mes, int anio) {
-    // Simplificación para convertir la fecha a un número total de días
+    // Simplificaciï¿½n para convertir la fecha a un nï¿½mero total de dï¿½as
     return anio * 365 + mes * 30 + dia;
 }
 
@@ -1139,7 +1144,7 @@ int convertirFechaADias(int dia, int mes, int anio) {
         scanf("%d", &dia1);
         printf("Ingrese el mes: ");
         scanf("%d", &mes1);
-        printf("Ingrese el año: ");
+        printf("Ingrese el aï¿½o: ");
         scanf("%d", &anio1);
     } while (!fechaValida(dia1, mes1, anio1));
 
@@ -1149,7 +1154,7 @@ int convertirFechaADias(int dia, int mes, int anio) {
         scanf("%d", &dia2);
         printf("Ingrese el mes: ");
         scanf("%d", &mes2);
-        printf("Ingrese el año: ");
+        printf("Ingrese el aï¿½o: ");
         scanf("%d", &anio2);
     } while (!fechaValida(dia2, mes2, anio2));
 
@@ -1161,7 +1166,7 @@ int convertirFechaADias(int dia, int mes, int anio) {
         if ((total1 <= fech3) && (fech3 <= total2)) {
             cont=cont +1;
 			printf("\n\nID Trabajo: %d\n", aux->idTrabajo);
-            buscarnombre(nombre_opc, aux->idOpcion, opc); // Se asume que existe una función llamada buscarnombre para obtener el nombre de la opción
+            buscarnombre(nombre_opc, aux->idOpcion, opc); // Se asume que existe una funciï¿½n llamada buscarnombre para obtener el nombre de la opciï¿½n
             printf("Opcion: %s\n", nombre_opc);
             printf("Ubicacion: %s\n", aux->Ubicacion);
             printf("Monto Total: %.2f\n", aux->MonTotal);
@@ -1181,7 +1186,7 @@ void buscarnombre(char *nombre, int id, struct opciones *prin) {
     while (prin != NULL) {
         if (id == prin->cod_opcion) {
             strcpy(nombre, prin->nombre);
-            return;  // Salir de la función una vez encontrado el nombre
+            return;  // Salir de la funciï¿½n una vez encontrado el nombre
         }
         prin = prin->sgte;  // Avanzar al siguiente elemento en la lista
     }
@@ -1194,10 +1199,10 @@ void buscarnombre(char *nombre, int id, struct opciones *prin) {
 void contar_ventas_entre_fechas(struct Trabajos_Pendientes *E2, struct opciones *opciones, int fecha_inicio, int fecha_fin) {
     struct Trabajos_Pendientes *trabajo = E2;
     while (trabajo != NULL) {
-        // Convertir la fecha del trabajo a días
+        // Convertir la fecha del trabajo a dï¿½as
         int trabajo_fecha = convertirFechaADias(trabajo->fech.dia, trabajo->fech.mes, trabajo->fech.anio);
         if (trabajo_fecha >= fecha_inicio && trabajo_fecha <= fecha_fin) {
-            // Aumentar la cantidad de ventas para la opción actual
+            // Aumentar la cantidad de ventas para la opciï¿½n actual
             struct opciones *opcion_actual = opciones;
             while (opcion_actual != NULL) {
                 if (opcion_actual->cod_opcion == trabajo->idOpcion) {
@@ -1211,7 +1216,7 @@ void contar_ventas_entre_fechas(struct Trabajos_Pendientes *E2, struct opciones 
     }
 }
 
-// Función para listar las opciones más vendidas entre fechas especificadas
+// Funciï¿½n para listar las opciones mï¿½s vendidas entre fechas especificadas
 void listaropcvendi(struct Trabajos_Pendientes *E2, struct opciones *ini) {
     struct Trabajos_Pendientes *aux1 = E2;
     int dia1, dia2, mes1, mes2, anio1, anio2;
@@ -1223,14 +1228,14 @@ void listaropcvendi(struct Trabajos_Pendientes *E2, struct opciones *ini) {
     scanf("%d", &dia1);
     printf("Ingrese el mes: ");
     scanf("%d", &mes1);
-    printf("Ingrese el año: ");
+    printf("Ingrese el aï¿½o: ");
     scanf("%d", &anio1);
     printf("Ingrese la segunda fecha: \n");
     printf("Ingrese el dia: ");
     scanf("%d", &dia2);
     printf("Ingrese el mes: ");
     scanf("%d", &mes2);
-    printf("Ingrese el año: ");
+    printf("Ingrese el aï¿½o: ");
     scanf("%d", &anio2);
     total1 = convertirFechaADias(dia1, mes1, anio1);
     total2 = convertirFechaADias(dia2, mes2, anio2);
@@ -1240,7 +1245,7 @@ void listaropcvendi(struct Trabajos_Pendientes *E2, struct opciones *ini) {
     listar_mas_vendi(ini);
 }
 
-// Función para listar las 4 opciones más vendidas
+// Funciï¿½n para listar las 4 opciones mï¿½s vendidas
 void listar_mas_vendi(struct opciones *opciones) {
     struct opciones *actual;
     struct opciones *siguiente;
@@ -1264,8 +1269,8 @@ void listar_mas_vendi(struct opciones *opciones) {
         }
     }
 
-    // Mostrar las cuatro opciones más vendidas
-    printf("Las cuatro opciones más vendidas son:\n");
+    // Mostrar las cuatro opciones mï¿½s vendidas
+    printf("Las cuatro opciones mï¿½s vendidas son:\n");
     for (int i = 0; i < 4 && opciones != NULL; i++) {
         printf("%s - Cantidad de ventas: %d\n", opciones->nombre, opciones->cant_ventas);
         opciones = opciones->sgte;
@@ -1288,7 +1293,7 @@ void contador(struct opciones *raiz_opcion){
 void Cargar_Desde_Archivo(struct Trabajos_Pendientes **Entrada, struct Trabajos_Pendientes **Salida, const char *nombreArchivo) {
     FILE *archivo = fopen(nombreArchivo, "r");
     if (archivo == NULL) {
-        printf("No se pudo abrir el archivo %s. Se comenzará con una cola vacía.\n", nombreArchivo);
+        printf("No se pudo abrir el archivo %s. Se comenzarï¿½ con una cola vacï¿½a.\n", nombreArchivo);
         return;
     }
 
@@ -1367,7 +1372,7 @@ void agregar_cliente(struct clientes *inicio) {
         return;
     }
 
-    printf("Ingrese el código del cliente: ");
+    printf("Ingrese el cï¿½digo del cliente: ");
     scanf("%d", &nuevo_cliente->codCliente);
 
     printf("Ingrese el nombre del cliente: ");
@@ -1485,17 +1490,17 @@ void imprimirlista(struct tecnicos *lista) {
 void agregar_tecnico(struct tecnicos *inicio) {
     struct tecnicos *nuevo_tecnico = (struct tecnicos*) malloc(sizeof(tecnicos));
     if (nuevo_tecnico == NULL) {
-        printf("Error: No se pudo asignar memoria para el nuevo técnico.\n");
+        printf("Error: No se pudo asignar memoria para el nuevo tï¿½cnico.\n");
         return;
     }
 
-    printf("Ingrese el código del técnico: ");
+    printf("Ingrese el cï¿½digo del tï¿½cnico: ");
     scanf("%d", &nuevo_tecnico->codTecnico);
 
-    printf("Ingrese el nombre del técnico: ");
-    scanf(" %[^\n]", nuevo_tecnico->nombre); // Para leer una línea completa, se utiliza "%[^\n]"
+    printf("Ingrese el nombre del tï¿½cnico: ");
+    scanf(" %[^\n]", nuevo_tecnico->nombre); // Para leer una lï¿½nea completa, se utiliza "%[^\n]"
 
-    printf("Ingrese el DNI del técnico: ");
+    printf("Ingrese el DNI del tï¿½cnico: ");
     scanf("%d", &nuevo_tecnico->dni);
 
     nuevo_tecnico->sgte = NULL;
@@ -1532,7 +1537,7 @@ void listar_trabajos_tecnico(struct Trabajos_Pendientes *E, struct Trabajos_Pend
     
     printf("Ingrese el id del tecnico a consultar: ");
     if (scanf("%d", &id_tecnico) == 0) {
-        printf("Error al leer el ID del técnico.\n");
+        printf("Error al leer el ID del tï¿½cnico.\n");
         return;
     }
 
@@ -1547,11 +1552,11 @@ void listar_trabajos_tecnico(struct Trabajos_Pendientes *E, struct Trabajos_Pend
     while (aux != NULL) {
         if (aux->idTecnico == id_tecnico) {
         	printf("------------------------------------\n");
-        	printf("Trabajos pendientes del técnico:\n");
+        	printf("Trabajos pendientes del tï¿½cnico:\n");
             printf("ID Trabajo: %d\n", aux->idTrabajo);
-            printf("Nombre de la opción: %s\n", obtener_nombre_opcion(aux->idOpcion, ini_opciones));
+            printf("Nombre de la opciï¿½n: %s\n", obtener_nombre_opcion(aux->idOpcion, ini_opciones));
             printf("Nombre del cliente: %s\n", obtener_nombre_cliente(aux->idCliente, ini_clientes));
-            printf("Ubicación: %s\n", aux->Ubicacion);
+            printf("Ubicaciï¿½n: %s\n", aux->Ubicacion);
             if (aux->Altura == 1) {
                 printf("Requiere trabajo en altura\n");
             } else {
@@ -1566,11 +1571,11 @@ void listar_trabajos_tecnico(struct Trabajos_Pendientes *E, struct Trabajos_Pend
  
     while (aux2 != NULL) {
         if (aux2->idTecnico == id_tecnico) {
-        	printf("Trabajos realizados del técnico:\n");
+        	printf("Trabajos realizados del tï¿½cnico:\n");
             printf("ID Trabajo: %d\n", aux2->idTrabajo);
-            printf("Nombre de la opción: %s\n", obtener_nombre_opcion(aux2->idOpcion, ini_opciones));
+            printf("Nombre de la opciï¿½n: %s\n", obtener_nombre_opcion(aux2->idOpcion, ini_opciones));
             printf("Nombre del cliente: %s\n", obtener_nombre_cliente(aux2->idCliente, ini_clientes));
-            printf("Ubicación: %s\n", aux2->Ubicacion);
+            printf("Ubicaciï¿½n: %s\n", aux2->Ubicacion);
             if (aux2->Altura == 1) {
                 printf("Requiere trabajo en altura\n");
             } else {
@@ -1599,7 +1604,7 @@ const char* obtener_nombre_opcion(int id_opcion, struct opciones *ini_opciones) 
     return "Desconocido";
 }
 
-// Función para obtener el nombre del cliente dado su ID
+// Funciï¿½n para obtener el nombre del cliente dado su ID
 const char* obtener_nombre_cliente(int id_cliente, struct clientes *ini_clientes) {
     struct clientes *aux = ini_clientes;
     while (aux != NULL) {
