@@ -1,9 +1,12 @@
 # servicio-de-seguridad
+
+TRABAJO FINAL INTEGRADOR 
+CARRERA: INGENIERIA INFORMATICA.
+AÑO DE CURSADA: 2DO.
+
 A CONTINUACION DEJO LAS CONSIGNAS.
-
-
 Buenos días chic@s!
-Les recuerdo que los requerimientos del sistema (los mínimos) son:
+Requerimientos del sistema son:
 Paso los requerimientos mínimos que debe contener el sistema:
 Requerimientos que deberá cumplir el programa a presentar:
 1) Listado de todas las opciones que tenga a la venta la empresa. El mismo se deberá imprimir por pantalla, los datos a mostrar son:
