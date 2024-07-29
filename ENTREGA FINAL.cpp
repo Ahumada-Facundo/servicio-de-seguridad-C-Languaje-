@@ -6,6 +6,9 @@
 //practico integrador de la materia algoritmos y estructuras 2, en los que se 
 //ven temas como listas,pilas,colas,etc todas estructuras de datos dinamicas,
 
+// autor: AHUMADA FACUNDO SEBASTIAN
+// ESTUDIANTE INGENIERIA INFORMATICA.
+
 
 struct fecha{
 	int dia;
